@@ -96,7 +96,7 @@ Although the database now contains a `movies` table, Rails has no idea
 that it exists.
 Since Movies are a model, the next step is therefore to create the
 ActiveRecord model that uses this table.  That is as simple as
-creating a file `app/models/movie.rb` with these two lines:
+creating (and versioning!!) a file `app/models/movie.rb` with these two lines:
 
 ```ruby
 class Movie < ActiveRecord::Base
@@ -131,25 +131,31 @@ inspiration, try a few simple queries on movies from the Rails console.
 
 ## Summary
 
-  1.  Rails defines three environments---development, production and
+*  Rails defines three environments---development, production and
     test---each with its own copy of the database.
-  1.  A migration is a script describing a specific set of changes to
+
+*  A migration is a script describing a specific set of changes to
     the database.  As apps evolve and add features, migrations are added
     to express the database changes required to support those new features.
-  1.  Changing a database using a migration takes three steps: create
+
+*  Changing a database using a migration takes three steps: create
     the migration, 
     apply the migration to your development database, and (if
     applicable) after testing your code apply the migration to your
     production database.
-  1.  The `rails generate migration`
+
+*  The `rails generate migration`
     generator fills in the boilerplate for a new
     migration, and the `ActiveRecord::Migration` class
     contains helpful methods for defining it.
-  1.  `rake db:migrate` applies  only
-    those migrations not already applied to the development database.
-    The method for applying migrations to a production database depends
-    on the deployment environment.
 
+* `rake db:migrate` applies  only
+those migrations not already applied to the development database.
+The method for applying migrations to a production database depends
+on the deployment environment.
+
+*  `rake db:seed` runs the `db/seeds.rb` file, which can optionally
+contain some initial data to put into the database.
 
 
 <details>
@@ -159,8 +165,8 @@ inspiration, try a few simple queries on movies from the Rails console.
 
 </summary>
 <blockquote>
-</blockquote>
   (a) they inherit from <code>ActiveRecord::Base</code>.
+</blockquote>
 </details>
 
 

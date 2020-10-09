@@ -1,44 +1,31 @@
 # Part 1: Set up the new app
 
-## Verify you have Ruby and Rails installed
+## Verify you have correct versions of Ruby, Rails, and Heroku CLI installed
+
+(If you're using Codio, these tools are already installed and you can
+skip this step.)
 
 Open a terminal window in your development environment.
 
-`ruby -v` tells you the installed Ruby version; if it fails, you 
-need to install Ruby--we recommend using [rvm (Ruby Version Manager)](https://rvm.io), 
-which allows you to maintain multiple installed versions of Ruby and 
-gem sets, useful if you're working on multiple apps that use different Ruby versions.
-You should have Ruby 2.6 or later.
+**NOTE:** These instructions assume you're using Ruby >=2.6.4 and
+<3.0.0 (2.6.0-2.6.3 do not work with `byebug`),
+and Rails 4.2.x.  _The assignment has not been tested with other
+versions._  If you're using Codio, the correct versions are already
+installed, using  [rvm (Ruby Version Manager)](https://rvm.io).
 
-`rails -v` tells you the installed version of the Rails framework. 
-If none is installed, say `gem install rails --version=4.2.10`, which is
-the Rails version that this assignment was tested with.  (It may work with 
-Rails 5 or 6 but is not guaranteed to.)
+You will also need `bundler ~>1.17`.  If `bundle -v` fails, `gem
+install bundler --version=1.17.3 --no-document`
+to install it.  (Normally, though, installing the `rails` gem will
+also install `bundler`.)
 
-You will also need the `bundler` gem.  If `bundle -v` fails, `gem install bundler`
-to install it.
-
-## IMPORTANT: Issues with Bundler and Rails versions in Codio
-
-The current (2020-10-01) version of the Codio stack contains a version
-of Bundler that doesn't work with this assignment, and the wrong
-version of Rails for using `rails new` to generate an app skeleton.  We're working on
-updating Codio but in the meantime, do these steps manually:
-
-```
-sudo gem uninstall --version '>=0' --all bundler
-sudo gem uninstall --version '> 4' --all rails
-sudo gem uninstall --version '> 4' --all railties
-sudo gem install --no-document --version '1.17.3' bundler
-sudo gem install --no-document --version '4.2.10' rails
-```
-
-(`--no-ri` skips the lengthy step of installing local documentation
-for the Gems; it's much faster to use the online documentation.  Also,
-you don't have to explicitly reinstall `railties` because it will be
-installed as a dependency of `rails`.)
+Finally, the `heroku` [command line tool](https://devcenter.heroku.com/articles/heroku-cli) should be installed in your development
+eenvironment; say `heroku -v` to verify this fact.  
 
 ## Create a new Rails app
+
+You  may find the Rails [online
+documentation](https://api.rubyonrails.org/v4) useful during this assignment.
+
 
 Now that you have Ruby and Rails installed, create a new, empty
 Rails app with the command `rails new rottenpotatoes --skip-test-unit
@@ -109,7 +96,12 @@ where x is any minor version.
 
 ## Check your work
 
-To make sure everything works, in the app's root directory 
+To make sure everything works, run the app locally.
+If using Codio, follow [these instructions]() to run and preview a Rails
+app locally.
+
+If developing locally,
+in the app's root directory 
 say `rails server`, which starts the WEBrick app server
 listening on port 3000.  Then in a web browser
 visit `localhost:3000` and you should see the generic Ruby on Rails landing page, 
