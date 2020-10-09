@@ -5,13 +5,11 @@
 (If you're using Codio, these tools are already installed and you can
 skip this step.)
 
-Open a terminal window in your development environment.
-
 **NOTE:** These instructions assume you're using Ruby >=2.6.4 and
 <3.0.0 (2.6.0-2.6.3 do not work with `byebug`),
-and Rails 4.2.x.  _The assignment has not been tested with other
-versions._  If you're using Codio, the correct versions are already
-installed, using  [rvm (Ruby Version Manager)](https://rvm.io).
+and Rails 4.2.x.  **The assignment has not been tested with other
+versions, and there are files that will almost certainly cause errors
+with Rails >=5.**
 
 You will also need `bundler ~>1.17`.  If `bundle -v` fails, `gem
 install bundler --version=1.17.3 --no-document`
