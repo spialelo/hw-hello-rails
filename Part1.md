@@ -26,10 +26,11 @@ eenvironment; say `heroku -v` to verify this fact.
 You  may find the Rails [online
 documentation](https://api.rubyonrails.org/v4) useful during this assignment.
 
-
 Now that you have Ruby and Rails installed, create a new, empty
-Rails app with the command `rails new rottenpotatoes --skip-test-unit
---skip-turbolinks --skip-spring`.
+Rails app with the command: 
+```sh
+rails new rottenpotatoes --skip-test-unit --skip-turbolinks --skip-spring
+```
 
 The options tell Rails to omit three aspects of the new app:
 
