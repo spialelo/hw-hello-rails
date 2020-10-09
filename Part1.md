@@ -95,15 +95,14 @@ where x is any minor version.
 
 ## Check your work
 
-To make sure everything works, run the app locally.
-If using Codio, follow [these instructions]() to run and preview a Rails
-app locally.
+To make sure everything works, run the app locally.  (It doesn't do
+anything yet, but we can verify that it is running and reachable!)
 
-If developing locally,
-in the app's root directory 
-say `rails server`, which starts the WEBrick app server
-listening on port 3000.  Then in a web browser
-visit `localhost:3000` and you should see the generic Ruby on Rails landing page, 
+Follow [these instructions](Codio.md) to run and preview a Rails
+app locally -- the steps are a bit different depending on whether
+you're using Codio.
+
+When you visit the app's home page, you should see the generic Ruby on Rails landing page, 
 which is actually being served by your app.  Later we will define our own routes
 so that the "top level" page does not default to this banner.
 

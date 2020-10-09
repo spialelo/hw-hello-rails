@@ -5,18 +5,18 @@ browser are slightly different if you are doing purely local
 development (Ruby/Rails running on your own computer) vs. using Codio.
 
 If you're comfortable with networking and tunneling, skip down to
-"TL;DR" below!
+"Why the difference" below.
 
-## Step by step: If developing in Codio
+## If developing in Codio
 
-First, obtain your Codio subdomain name by going into any Codio terminal
+Obtain your Codio subdomain name by going into any Codio terminal
 window and saying `hostname`.  Your subdomain will be a pair of random
 words--in this example we'll pretend it's `luminous-coconut`.
 
 1. Start the app in a terminal:  `rails server -b 0.0.0.0`
 2. Open a regular browser window to  `luminous-coconut-3000.codio.io` to visit the app's home page
 
-## Step by step: If developing Locally
+## If developing Locally
 
 If you're developing locally, the steps would instead be these:
 

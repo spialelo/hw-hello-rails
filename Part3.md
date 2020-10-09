@@ -1,39 +1,19 @@
 # Part 3: Create CRUD routes, actions, and views for Movies
 
-If you are developing in Codio, we need to add a line of code to `config/environments/development.rb`.
-Change this configuration option to match the following (if it exists) or add a new line:
- ```
-config.hosts = nil
-```
+Try running the app again, and this time instead of visiting the home
+page try visiting `/movies`.  (That is: `/movies` should be the URI
+path, the part that immediately follows the hostname and/or port
+number in the URI.)
 
-![](development-config-host-nil.webp)
-
-Open Terminal using `Tools > Terminal` and run the following command:
-```shell script
-rails server -b 0.0.0.0
-```
-
-To view your movies review site, use the Preview button that says `Project Index` in the top tool bar.
-Click the drop down and select `Box URL`.
-
-![](box-url.webp)
-
-For subsequent previews, you will not need to press the drop down – your button should now read "Box URL".
-
-If you now try the URI `https://your-codiobox-3000.codio.io/movies`, should get a Routing Error from Rails.
-You can get `your-codiobox` from your terminal. When you open a new terminal, among the first few lines printed out,
-you will see a line that matches the following format:
-```shell script
-* Your Codio Box domain is: [your-codiobox].codio.io
-```
-Indeed, you should verify that anything you add after the hostname part of the URI results in this error,
+Or, for that matter, visit `/turtle` or `/foobar` or any URI path at all;
+Rails will complain that your URI doesn't match any route,
 because we haven’t specified any routes mapping URIs to app methods. Try `rake routes`
 and verify that it informs us that there are no routes in our brand-new app. (You may want to open multiple Terminal windows
 or tabs so that the app can keep running while you try other commands.)
 
 More importantly, use an editor to open the file `log/development.log` and observe that the error message is logged there;
 this is where you look to find detailed error information when something goes wrong. 
-We’ll show other problem-finding and debugging techniques later.
+We'll show other problem-finding and debugging techniques later.
 
 To fix this error we need to add some routes. Since our initial goal is to store movie information in a database,
 we can take advantage of a Rails shortcut that creates RESTful routes for the four basic CRUD actions 
